@@ -128,5 +128,39 @@ Still with above changes this model gave accoracy level 74%
 
 ### 3rd Attempt:
 
+- this time I only used 1 bucket(other) for column "NAME".
 
+![name bucket other](./images/D3per3namebucket.PNG)
+
+- With above bucket selection now we have after one-hot encoded, 396 columns
+
+![](./images/D3per3columns.PNG)
+
+- Used the same Nurelnetwork model as above 2nd attempt
+
+![](./images/D3per3accuracy.PNG)
+
+from this 3rd attempt with meaningfully buckerted "NAME" column got accuracy level 78%.
+
+### Examin Random Forest Classifier for comparison
+
+
+![](./images/randomforest.PNG)
+
+So the Random forest classifier got accuracy of 77.85% almost 78% with 80% F1 score for successful application.
+
+  if we compare both model's predictive accuracy, their output is very similar. Both the random forest and deep learning models were able to predict correctly whether a applicants will be successful 78%  of the time. 
+  
+  Although their predictive performance was comparable, their implementation and training times were not—the random forest classifier was able to train on the large dataset and predict values in seconds, while the deep learning model required a couple minutes to train on the tens of thousands of data points. 
 ## Summary
+When comparing three attempt to optimize nural network classifier models,after buckerting column "NAME" in useful way the model gave more than 78% accuracy level with 4 hidden layers.
+
+The random forest model is able to achieve comparable predictive accuracy on large tabular data with less code and faster performance.
+
+Other than that random forest model gives list of features by their importance
+
+![](./images/impofeatures.PNG)
+
+this feature importence list also give idea how impotant the column NAME to this data set.
+
+Considering above all facts we can recomend Random Forest classifier is the best model to  predict whether applicants will be successful if funded by Alphabet Soup.
